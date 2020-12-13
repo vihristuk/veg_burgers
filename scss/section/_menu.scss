@@ -1,0 +1,112 @@
+.menu {
+  background-image: url(../img/bg/menu_bg.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.container--menu {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: unset;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+}
+
+.section__title--menu {
+  color: #fff;
+  margin-top: rem(40px);
+  margin-left: rem(90px);
+}
+
+.menu__accordion {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  display: flex;
+}
+
+.menu__accordion-item {
+  display: flex;
+}
+
+.menu__accordion-item--active {
+  .menu__accordion-item__trigger-title {
+    color: $yellow;
+  }
+  .menu__accordion-item__content {
+    width: rem(540px);
+    padding: rem(60px) rem(35px) rem(80px) rem(35px);
+  }
+
+  @include tablets {
+    .menu__accordion-item__content {
+    width: 100%;
+    } 
+  }
+}
+
+.menu__accordion-item__trigger {
+  width: rem(80px);
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding-bottom: rem(40px);
+}
+
+.menu__accordion-item__trigger-title {
+  // display: flex;
+  transform-origin: rem(33px) rem(20px) 0;
+  transform: rotate(-90deg);
+  text-decoration: none;
+  color: #fff;
+  font-family: Gagalin;
+  font-size: rem(40px);
+}
+
+.menu__accordion-item__content {
+  width: 0;
+  overflow: hidden;
+  background-color: rgba(#2f3234, 0.93);
+  position: relative;
+}
+
+.menu__accordion-item__content__text {
+  font-family: Ubuntu;
+  font-weight: 300;
+  font-size: rem(14px);
+  line-height: 1.7;
+  color: #fff;
+}
+
+.menu__accordion-item__content__img {
+  width: rem(80px);
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0.1;
+  padding-bottom: rem(40px);
+}
+
+.menu__accordion-item__content__title {
+  transform: rotate(-90deg);
+  color: #fff;
+  font-family: Gagalin;
+  font-size: rem(40px);
+  margin: 0;
+  bottom: rem(108px);
+  left: rem(-52px);
+  position: absolute;
+}

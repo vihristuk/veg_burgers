@@ -1,0 +1,130 @@
+ .order {
+  background-image: url(../img/bg/form_bg.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+ }
+
+.section__title--order {
+  margin-top: rem(70px);
+}
+
+  .form {
+   margin-top: rem(50px);
+   color: #fff;
+   display: flex;
+  justify-content: space-between;
+
+   @include tablets {
+     flex-direction: column;
+     width: 70%;
+     align-items: center;
+   }
+
+   @include phones {
+     width: 100%;
+   }
+ }
+
+ .form__left, .form__right {
+   display: flex;
+   flex-direction: column;
+   flex-basis: 49%;
+
+   @include tablets {
+     width: 100%;
+   }
+ }
+
+ .form__row {
+   margin-bottom: rem(15px);
+   display: flex;
+}
+
+ .form__block {
+   display: block;
+   margin-right: rem(20px);
+   flex: 1;
+
+   &:last-child {
+     margin-right: 0;
+   }
+ }
+
+ .form__title {
+   font-weight: 300;
+   font-size: rem(14px);
+   line-height: 1;
+   margin-right: rem(18px);
+   margin-bottom: rem(7px);
+ }
+ 
+ .form__input {
+   width: 100%;
+   padding: rem(10px);
+   border: none;
+   border-radius: rem(5px);
+   background: #fff;
+   &:focus {
+     border: solid rem(2px) $yellow;
+     outline: none;
+   }
+    }
+
+.form__textarea {
+  resize: none;
+  width: 100%;
+  height: rem(110px);
+  border-radius: rem(5px);
+    border: none;
+   background: #fff;
+   &:focus {
+     border: solid rem(2px) $yellow;
+     outline: none;
+   }
+}
+
+.form__radio {
+  margin-right: rem(8px);
+}
+
+.form__radio, .form__checkbox{
+  /* Hide original inputs */
+  visibility: hidden;
+  position: absolute;
+}
+.form__radio + label:before,
+.form__checkbox + label:before{
+  height:rem(12px);
+  width:rem(12px);
+  margin-right: rem(2px);
+  content: " ";
+  display:inline-block;
+  vertical-align: baseline;
+ background-color: #fff;
+}
+.form__radio:checked + label:before,
+input[type=checkbox]:checked + label:before{
+  background:#fff;
+}
+
+/* CUSTOM RADIO AND CHECKBOX STYLES */
+.form__radio + label:before{
+  border-radius:50%;
+}
+// .form__checkbox + label:before{
+//   border-radius:rem(2px);
+// }
+
+.form__checkbox {
+  margin-right: rem(8px);
+}
+
+.form__reset {
+  margin-left: rem(18px);
+  font-weight: 300;
+  font-size: rem(14px);
+  color: #fff;
+  border: 0;
+  background-color: transparent;
+}

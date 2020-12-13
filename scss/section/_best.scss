@@ -1,0 +1,59 @@
+.best {
+  background-image: url("../img/bg/best-bg.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+}
+
+.section__title--best {
+  color: #2f3234;
+  padding: 0;
+  margin-top: rem(120px);
+  margin-bottom: rem(50px);
+}
+
+.best__features {
+  display: flex;
+  justify-content: space-between;
+
+  @include phones {
+    flex-direction: column;
+  }
+}
+
+.best__feature {
+  width: 31%;
+  @include phones {
+    display: flex;
+    width: 100%;
+  }
+}
+
+.feature__img {
+  text-align: center;
+  min-height: rem(90px);
+}
+
+.feature__content {
+  text-align: center;
+
+  @include phones {
+    text-align: left;
+  }
+}
+
+.feature__title {
+  font-family: Lifehack;
+  font-size: rem(23px);
+  font-weight: normal;
+  // text-align: center;
+}
+
+.feature__text {
+  font-family: Ubuntu;
+  font-weight: 300;
+  font-size: rem(14px);
+  line-height: 2;
+  color: #2f3234;
+  // text-align: center;
+}

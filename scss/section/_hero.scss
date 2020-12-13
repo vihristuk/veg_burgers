@@ -1,0 +1,234 @@
+.hero {
+  background-image: url('../img/bg/hero_bg.png');
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  position: relative;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: rem(10px);
+}
+
+.header__logo {
+  margin-right: auto;
+}
+
+.nav {
+  margin-right: rem(15px);
+  &__list {
+    margin: 0;
+    padding: 0;
+  }
+
+  @include tablets {
+    display: none;
+  }
+}
+
+.nav__item {
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  &:after {
+    display: inline-block;
+    vertical-align: middle;
+    content: ' ';
+    @include circle(rem(5px), #fff);
+    margin: 0 rem(12px);
+  }
+  &:last-child:after {
+    display: none;
+  }
+}
+
+.nav__link {
+  color: #ffffff;
+  font-size: rem(13px);
+  font-weight: 400;
+  line-height: 1.42;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: middle;
+  transition: .5s;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+/* скрываем чекбокс */
+#humburger-menu__toggle {
+  opacity: 0;
+}
+/* стилизуем кнопку */
+.humburger-menu__btn {
+  display: none; /* используем flex для центрирования содержимого */
+  align-items: center;  /* центрируем содержимое кнопки */
+  position: absolute;
+  top: 39px;
+  right: 30px;
+  width: 25px;
+  height: 24px;
+  cursor: pointer;
+  z-index: 3;
+
+  @include tablets {
+    display: flex;
+  }
+}
+
+/* добавляем "гамбургер" */
+.humburger-menu__btn > span,
+.humburger-menu__btn > span::before,
+.humburger-menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.humburger-menu__btn > span::before {
+  content: '';
+  top: -8px;
+}
+.humburger-menu__btn > span::after {
+  content: '';
+  top: 8px;
+}
+/* контейнер меню */
+.humburger-menu__box {
+  display: block;
+  position: fixed;
+  visibility: hidden;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 270px 0 0 0;
+  list-style: none;
+  text-align: center;
+  background-color: #2f3234;
+  opacity: 99%;
+}
+/* элементы меню */
+
+.humburger-menu__logo{
+  position: absolute;
+  top: 10px;
+  left: 25px;
+}
+.humburger-menu__item {
+     &:after {
+    display: block;
+    content: " ";
+    @include circle(rem(7px), #fff);
+    margin: 12px auto;
+  }
+  &:last-child:after {
+    display: none;
+  }
+
+} 
+.humburger-menu__link {
+  display: block;
+  padding: 12px 24px;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 400;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#humburger-menu__toggle:checked ~ .humburger-menu__btn > span {
+  transform: rotate(45deg);
+}
+#humburger-menu__toggle:checked ~ .humburger-menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+#humburger-menu__toggle:checked ~ .humburger-menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#humburger-menu__toggle:checked ~ .humburger-menu__box {
+  visibility: visible;
+  left: 0;
+}
+.humburger-menu__btn > span,
+.humburger-menu__btn > span::before,
+.humburger-menu__btn > span::after {
+  transition-duration: .25s;
+}
+.humburger-menu__box {
+  transition-duration: .25s;
+}
+.humburger-menu__item {
+  transition-duration: .25s;
+}
+
+
+
+.hero__container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  align-items: center;
+  padding-bottom: 15%;
+
+  @include tablets {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+}
+
+.hero__img, .hero__description {
+  flex-basis: 50%;
+  display: flex;
+}
+
+.hero__description {
+  flex-direction: column;
+  justify-content: center;
+  @include tablets {
+    align-items: center;
+  }
+}
+
+.section__title {
+  color: #f9b43b;
+  font-family: 'Gagalin';
+  font-size: rem(72px);
+  font-weight: 300;
+  line-height: 1.42;
+  margin: 0;
+  padding-top: rem(60px);
+}
+
+.hero__description-text {
+  color: #ffffff;
+  font-family: 'Lifehack';
+  font-size: rem(55px);
+  font-weight: 400;
+  line-height: 1;
+  @include tablets {
+    text-align: center;
+  }
+}

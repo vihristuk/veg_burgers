@@ -1,0 +1,71 @@
+.contacts {
+  position: relative;
+}
+
+.map {
+  height: 100%;
+  width: 100%;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: rem(60px);
+  background-image: url(../img/bg/footer_bg.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  @include phones {
+    height: rem(110px);
+  }
+}
+
+.footer__container {
+  max-width: rem(940px);
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+
+  @include tablets {
+    width: 95%;
+  }
+  @include phones {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.footer__contacts {
+  flex-basis: 50%;
+  font-weight: 300;
+  font-size: rem(14px);
+  color: #fff;
+  line-height: 2;
+}
+
+.footer__contacts__phone {
+  font-weight: bold;
+  color: $orange;
+  text-decoration: none;
+}
+
+.footer__social {
+flex-basis: 50%;
+display: flex;
+align-items: center;
+justify-content: flex-end;
+}
+
+.footer__social-link__img {
+  width: rem(23px);
+  margin-left: rem(15px);
+  opacity: 0.3;
+
+  &:hover {
+    opacity: 1;
+  }
+}
